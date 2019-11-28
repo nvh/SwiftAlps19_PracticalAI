@@ -294,14 +294,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "FDDemo/Preview\\ Content";
-				DEVELOPMENT_TEAM = 5V2A4389PA;
+				DEVELOPMENT_TEAM = WG52ARDM9L;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FDDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = au.com.secretlab.FDDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.zekerwaar.FDDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -314,14 +314,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "FDDemo/Preview\\ Content";
-				DEVELOPMENT_TEAM = 5V2A4389PA;
+				DEVELOPMENT_TEAM = WG52ARDM9L;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FDDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = au.com.secretlab.FDDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.zekerwaar.FDDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
