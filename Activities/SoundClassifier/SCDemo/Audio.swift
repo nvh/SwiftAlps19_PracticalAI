@@ -29,7 +29,21 @@ class ResultsObserver: NSObject, SNResultsObserving {
 }
 
 class AudioClassifier {
-    
-    // TODO: implement object able to tap input audio stream and
-    // classify it as per the model we have trained
+    private let model: MLModel
+    private let request: SNClassifySoundRequest
+    private let inputBus: AVAudioNodeBus
+    private let audioEngine = AVAudioEngine()
+    private let analysisQueue = DispatchQueue(label: "com.apple.AnalysisQueue")
+    private let analyzer: SNAudioStreamAnalyzer
+    private let inputFormat: AVAudioFormat
+    init?(model: MLModel, inputBus: AVAudioNodeBus = 0) {
+        guard let request = try? SNClassifySoundRequest(mlModel: model) else {
+            return nil
+        }
+        self.model = model
+        self.request = request
+        self.inputBus = inputBus
+        self.inputFormat = audioEngine.inputNode.inputFormat(forBus: inputBus)
+        self.analyzer = SNAudioStreamAnalyzer(format: inputFormat)
+    }
 }
