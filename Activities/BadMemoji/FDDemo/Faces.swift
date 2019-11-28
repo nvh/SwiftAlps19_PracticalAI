@@ -10,7 +10,17 @@ import UIKit
 import Vision
 
 extension UIImage {
-    // TODO: give UIImage some way to detect faces within it
+    // Give UIImage some way to detect faces within it
+    func detectFaces(completion: @escaping ([VNFaceObservation]?) -> ()) {
+        guard let image = self.cgImage else { return completion(nil) }
+        let request = VNDetectFaceLandmarksRequest()
+        DispatchQueue.global().async {
+            let handler = VNImageRequestHandler(cgImage: image, orientation: self.cgImageOrientation)
+            try? handler.perform([request])
+        }
+        guard let observations = request.results as? [VNFaceObservation] else {return completion([])}
+        completion(observations)
+    }
 }
 
 
