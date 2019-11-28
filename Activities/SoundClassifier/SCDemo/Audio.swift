@@ -51,7 +51,7 @@ class AudioClassifier {
     }
     func beginAnalysis(completion: @escaping (String?) -> ()) {
         guard let _ = try? audioEngine.start() else {return }
-        print("Begin Recording...")
+        print("Begin recording...")
         let observer = ResultsObserver(completion: completion)
         guard let _ = try? analyzer.add(request, withObserver: observer) else { return }
         self.observer = observer
