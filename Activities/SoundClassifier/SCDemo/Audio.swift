@@ -10,9 +10,22 @@ import CoreML
 import AVFoundation
 import SoundAnalysis
 
-class ResultsObserver {
-    
-    // TODO: implement initialisation and completion handlers
+class ResultsObserver: NSObject, SNResultsObserving {
+    private var completion: (String?) -> ()
+    init(completion: @escaping (String?) -> ()) {
+        self.completion = completion
+    }
+    func request(_ request: SNRequest, didProduce result: SNResult) {
+        guard let results = result as? SNClassificationResult,
+            let result = results.classifications.first else {return}
+        let label = result.confidence > 0.7 ? result.identifier : nil
+        DispatchQueue.main.async {
+            self.completion(label)
+        }
+    }
+    func request(_ request: SNRequest, didFailWithError error: Error) {
+        completion(nil)
+    }
 }
 
 class AudioClassifier {
