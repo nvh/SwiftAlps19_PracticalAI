@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     
     private var recording: Bool = false
     private var classification: Animal?
-    // TODO: needs something to query for sound classification
+    private let classifier = AudioClassifier(model: AnimalSounds().model)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +45,10 @@ class ViewController: UIViewController {
             
             // TODO: start collection/doing something with the sound input
             
+            classifier?.beginAnalysis { result in
+                self.classify(Animal(rawValue: result ?? ""))
+            }
+            
         } else {
             refresh()
             recordButton.changeState(
@@ -54,7 +58,7 @@ class ViewController: UIViewController {
                 )
             )
             
-            // TODO: stop accepting/doing something with the sound input
+            classifier?.endAnalysis()
         }
     }
 
