@@ -311,7 +311,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5V2A4389PA;
+				DEVELOPMENT_TEAM = WG52ARDM9L;
 				INFOPLIST_FILE = SCDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -321,7 +321,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SCDemo",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = au.com.secretlab.SCDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.zekerwaar.SCDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -333,7 +333,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5V2A4389PA;
+				DEVELOPMENT_TEAM = WG52ARDM9L;
 				INFOPLIST_FILE = SCDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -343,7 +343,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SCDemo",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = au.com.secretlab.SCDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.zekerwaar.SCDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
