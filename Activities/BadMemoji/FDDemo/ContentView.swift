@@ -7,12 +7,13 @@
 //
 
 import SwiftUI
+import Vision
 
 struct ContentView: View {
     @State private var imagePickerOpen: Bool = false
     @State private var cameraOpen: Bool = false
     @State private var image: UIImage? = nil
-    @State private var faces: [Any]? = nil
+    @State private var faces: [VNFaceObservation]? = nil
     // TODO: store face detections so that changes update view
     
     private var faceCount: Int { return faces?.count ?? 0 }
@@ -30,7 +31,13 @@ struct ContentView: View {
         print("Getting faces...")
         self.faces = []
         
-        // TODO: get and annotate faces
+        image?.detectFaces { result in
+            self.faces = result
+            if let image = self.image,
+                let annotatedImage = result?.drawOn(image) {
+                self.image = annotatedImage
+            }
+        }
     }
     
     private func controlReturned(image: UIImage?) {
