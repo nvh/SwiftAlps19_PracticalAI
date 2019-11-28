@@ -54,6 +54,7 @@ class AudioClassifier {
         print("Begin recording...")
         let observer = ResultsObserver(completion: completion)
         guard let _ = try? analyzer.add(request, withObserver: observer) else { return }
+        // Keep the observer around because otherwise it's discarded
         self.observer = observer
         audioEngine.inputNode.installTap(
             onBus: inputBus,
