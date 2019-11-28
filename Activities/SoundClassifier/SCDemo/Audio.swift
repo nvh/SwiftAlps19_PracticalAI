@@ -36,6 +36,9 @@ class AudioClassifier {
     private let analysisQueue = DispatchQueue(label: "com.apple.AnalysisQueue")
     private let analyzer: SNAudioStreamAnalyzer
     private let inputFormat: AVAudioFormat
+    
+    private var observer: ResultsObserver?
+    
     init?(model: MLModel, inputBus: AVAudioNodeBus = 0) {
         guard let request = try? SNClassifySoundRequest(mlModel: model) else {
             return nil
@@ -45,5 +48,20 @@ class AudioClassifier {
         self.inputBus = inputBus
         self.inputFormat = audioEngine.inputNode.inputFormat(forBus: inputBus)
         self.analyzer = SNAudioStreamAnalyzer(format: inputFormat)
+    }
+    func beginAnalysis(completion: @escaping (String?) -> ()) {
+        guard let _ = try? audioEngine.start() else {return }
+        print("Begin Recording...")
+        let observer = ResultsObserver(completion: completion)
+        guard let _ = try? analyzer.add(request, withObserver: observer) else { return }
+        self.observer = observer
+        audioEngine.inputNode.installTap(
+            onBus: inputBus,
+            bufferSize: 8192,
+            format: inputFormat) { buffer, time in
+                self.analysisQueue.async {
+                    self.analyzer.analyze(buffer, atAudioFramePosition: time.sampleTime)
+                }
+        }
     }
 }
