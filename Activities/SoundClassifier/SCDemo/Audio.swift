@@ -65,4 +65,13 @@ class AudioClassifier {
                 }
         }
     }
+    
+    func endAnalysis() {
+        print("End recording...")
+        analyzer.completeAnalysis()
+        analyzer.remove(request)
+        audioEngine.inputNode.removeTap(onBus: inputBus)
+        audioEngine.stop()
+    }
+    
 }
