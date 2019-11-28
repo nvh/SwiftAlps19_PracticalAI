@@ -13,6 +13,7 @@
 		4127A84322B086380058A6E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4127A84222B086380058A6E1 /* Assets.xcassets */; };
 		4127A84622B086380058A6E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4127A84422B086380058A6E1 /* LaunchScreen.storyboard */; };
 		4127A87022B08AF60058A6E1 /* Sentiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4127A86F22B08AF60058A6E1 /* Sentiment.swift */; };
+		B3DBF6DA238FD3BE00CDA1AE /* SentimentClassificationModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B3DBF6D9238FD3BD00CDA1AE /* SentimentClassificationModel.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4127A84522B086380058A6E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4127A84722B086380058A6E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4127A86F22B08AF60058A6E1 /* Sentiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sentiment.swift; sourceTree = "<group>"; };
+		B3DBF6D9238FD3BD00CDA1AE /* SentimentClassificationModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = SentimentClassificationModel.mlmodel; path = Dataset/SentimentClassificationModel.mlmodel; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				4127A84722B086380058A6E1 /* Info.plist */,
 				4127A83922B086350058A6E1 /* AppDelegate.swift */,
 				4127A83D22B086350058A6E1 /* ViewController.swift */,
+				B3DBF6D9238FD3BD00CDA1AE /* SentimentClassificationModel.mlmodel */,
 				4127A86F22B08AF60058A6E1 /* Sentiment.swift */,
 			);
 			path = NLPDemo;
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3DBF6DA238FD3BE00CDA1AE /* SentimentClassificationModel.mlmodel in Sources */,
 				4127A83E22B086350058A6E1 /* ViewController.swift in Sources */,
 				4127A87022B08AF60058A6E1 /* Sentiment.swift in Sources */,
 				4127A83A22B086350058A6E1 /* AppDelegate.swift in Sources */,
@@ -285,13 +289,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5V2A4389PA;
+				DEVELOPMENT_TEAM = WG52ARDM9L;
 				INFOPLIST_FILE = NLPDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = au.com.secretlab.NLPDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.zekerwaar.NLPDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -303,13 +307,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5V2A4389PA;
+				DEVELOPMENT_TEAM = WG52ARDM9L;
 				INFOPLIST_FILE = NLPDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = au.com.secretlab.NLPDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = nl.zekerwaar.NLPDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

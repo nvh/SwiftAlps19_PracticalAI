@@ -7,6 +7,15 @@
 //
 
 import UIKit
+import NaturalLanguage
+
+extension String {
+    func predictSentiment(with nlModel: NLModel) -> Sentiment {
+        if self.isEmpty { return .neutral }
+        let classString = nlModel.predictedLabel(for: self)
+        return Sentiment(rawValue: classString  ?? "")
+    }
+}
 
 class ViewController: UIViewController {
     
@@ -19,7 +28,9 @@ class ViewController: UIViewController {
     
     private let placeholderText = "Type something here..."
 
-    // TODO: store object capable of classifying text
+    private lazy var model: NLModel? = {
+        return try? NLModel(mlModel: SentimentClassificationModel().model)
+    }()
     
     override func viewDidLoad() {
         textView.text = placeholderText
@@ -33,8 +44,8 @@ class ViewController: UIViewController {
 
         var sentimentClass = Sentiment.neutral
         
-        if let text = textView.text {
-            // TODO: do something with the text
+        if let text = textView.text, let nlModel = self.model {
+            sentimentClass = text.predictSentiment(with: nlModel)
         }
         
         emojiView.text = sentimentClass.icon

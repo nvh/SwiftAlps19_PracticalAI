@@ -2,7 +2,7 @@ import CreateML
 import Foundation
 
 // Configure as required
-let inputFilepath = "<Your location goes here>/"
+let inputFilepath = "/Users/nvh/Code/3rdparty/SwiftAlps19_PracticalAI/Activities/SentimentAnalysis/Dataset/"
 let inputFilename = "epinions3"
 let outputFilename = "SentimentClassificationModel"
 
